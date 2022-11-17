@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <link rel="stylesheet" href="./InsuranceCardTemplateStyles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <table>
+        <tbody>
+          <tr>
+            <td class="right" colspan="4">
+              <img class="logo" src="./img/State_Farm_logo_small.png" />
+            </td>
+          </tr>
+          <tr>
+            <td class="center padding-bottom" colspan="4">
+              {{model.state}} Insurance Card
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Name</td>
+            <td class="content">{{model.primaryNamedInsured}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="content">{{model.secondaryNamedInsured}}</td>
+          </tr>
+          <tr>
+            <td class="padding-bottom"></td>
+          </tr>
+          <tr>
+            <td class="label">Policy Number</td>
+            <td class="content" colspan="3">{{model.policyNumber}}</td>
+          </tr>
+          <tr>
+            <td class="padding-bottom"></td>
+          </tr>
+          <tr>
+            <td class="label">Effective Date</td>
+            <td class="content">{{model.policyStartDate}}</td>
+            <td class="label">To</td>
+            <td class="content">{{model.policyEndDate}}</td>
+          </tr>
+          <tr>
+            <td class="padding-bottom"></td>
+          </tr>
+          <tr>
+            <td class="label">Year</td>
+            <td class="content">{{model.vehicleYear}}</td>
+            <td class="label">Make</td>
+            <td class="content">{{model.vehicleMake}}</td>
+          </tr>
+          <tr>
+            <td class="label">VIN</td>
+            <td class="content" colspan="3">{{model.vehicleVin}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

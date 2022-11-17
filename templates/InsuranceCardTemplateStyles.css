@@ -1,0 +1,36 @@
+table {
+  border: 1px solid;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;  
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.content {
+  width: 1%;
+}
+
+.label {
+  width: 1%;
+  padding-right: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+td {
+  font-size: 12pt;
+  border: none;
+}
+
+div.card {
+  padding-top: 100px;
+  padding-left: 150px;
+}
