@@ -1,4 +1,4 @@
-﻿using InsuranceCardWriter;
+﻿using InsuranceCardWriter.Components;
 using Scryber.Components;
 
 //create our sample model data.
@@ -7,20 +7,7 @@ using Scryber.Components;
 var path = System.Environment.CurrentDirectory;
 path = System.IO.Path.Combine(path, "../../templates/InsuranceCardTemplate.html");
 
-var inputs = InsuranceCardModel.ReadInsuranceCardDataFromStdin();
-
-var model = new
-{
-    state = inputs.State,
-    primaryNamedInsured = inputs.PrimaryNamedInsured,
-    secondaryNamedInsured = inputs.SecondaryNamedInsured,
-    policyNumber = inputs.PolicyNumber,
-    policyStartDate = inputs.PolicyStartDate,
-    policyEndDate = inputs.PolicyEndDate,
-    vehicleYear = inputs.VehicleYear,
-    vehicleMake = inputs.VehicleMake,
-    vehicleVin = inputs.VehicleVin
-};
+var model = InsuranceCardModel.ReadInsuranceCardDataFromStdin();
 
 using (var doc = Document.ParseDocument(path))
 {

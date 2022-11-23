@@ -1,4 +1,4 @@
-namespace InsuranceCardWriter;
+namespace InsuranceCardWriter.Components;
 
 public class InsuranceCardModel
 {
