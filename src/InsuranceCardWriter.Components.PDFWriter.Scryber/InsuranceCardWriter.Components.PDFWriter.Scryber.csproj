@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\templates\img\ScyberLogo2_alpha_small.png" Link="Templates\Scryber\img\ScyberLogo2_alpha_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\templates\img\State_Farm_logo_PNG1.png" Link="Templates\Scryber\img\State_Farm_logo_PNG1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\templates\img\State_Farm_logo_small.png" Link="Templates\Scryber\img\State_Farm_logo_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\templates\InsuranceCardTemplate.html" Link="Templates\Scryber\InsuranceCardTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\templates\InsuranceCardTemplateStyles.css" Link="Templates\Scryber\InsuranceCardTemplateStyles.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\templates\SampleTemplate.html" Link="Templates\Scryber\SampleTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scryber.Core" Version="6.0.0.10-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InsuranceCardWriter.Components\InsuranceCardWriter.Components.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Templates\Scryber\img\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\templates\InsuranceCardTemplate.html" Link="Templates\InsuranceCardTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\templates\SampleTemplate.html" Link="Templates\SampleTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scryber.Core" Version="6.0.0.10-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\InsuranceCardWriter.Components.PDFWriter.Scryber\InsuranceCardWriter.Components.PDFWriter.Scryber.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+</Project>

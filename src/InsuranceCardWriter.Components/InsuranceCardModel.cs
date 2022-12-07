@@ -2,6 +2,7 @@ namespace InsuranceCardWriter.Components;
 
 public class InsuranceCardModel
 {
+  public string? DocumentId { get; set; }
   public string? State { get; set; }
   public string? PrimaryNamedInsured { get; set; }
   public string? SecondaryNamedInsured { get; set; }
@@ -11,6 +12,8 @@ public class InsuranceCardModel
   public string? VehicleYear { get; set; }
   public string? VehicleMake { get; set; }
   public string? VehicleVin { get; set; }
+
+    public List<Payment> PaymentHistory { get; set; }
 
   public static InsuranceCardModel ReadInsuranceCardDataFromStdin()
   {
@@ -45,4 +48,12 @@ public class InsuranceCardModel
 
     return model;
   }
+}
+
+public class Payment
+{
+    public string Id { get; set; }
+    public decimal Amount { get; set; }
+    public DateTime DueDate { get; set; }
+    public DateTime PaymentDate { get; set; }
 }

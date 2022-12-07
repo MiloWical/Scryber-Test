@@ -1,61 +1,102 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
-  <head>
+<head>
     <link rel="stylesheet" href="./InsuranceCardTemplateStyles.css" />
-  </head>
-  <body>
+</head>
+<body>
+    <header>
+        <p>Page Header</p>
+    </header>
     <div class="card">
-      <table>
-        <tbody>
-          <tr>
-            <td class="right" colspan="4">
-              <img class="logo" src="./img/State_Farm_logo_small.png" />
-            </td>
-          </tr>
-          <tr>
-            <td class="center padding-bottom" colspan="4">
-              {{model.State}} Insurance Card
-            </td>
-          </tr>
-          <tr>
-            <td class="label">Name</td>
-            <td class="content">{{model.PrimaryNamedInsured}}</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="content">{{model.SecondaryNamedInsured}}</td>
-          </tr>
-          <tr>
-            <td class="padding-bottom"></td>
-          </tr>
-          <tr>
-            <td class="label">Policy Number</td>
-            <td class="content" colspan="3">{{model.PolicyNumber}}</td>
-          </tr>
-          <tr>
-            <td class="padding-bottom"></td>
-          </tr>
-          <tr>
-            <td class="label">Effective Date</td>
-            <td class="content">{{model.PolicyStartDate}}</td>
-            <td class="label">To</td>
-            <td class="content">{{model.PolicyEndDate}}</td>
-          </tr>
-          <tr>
-            <td class="padding-bottom"></td>
-          </tr>
-          <tr>
-            <td class="label">Year</td>
-            <td class="content">{{model.VehicleYear}}</td>
-            <td class="label">Make</td>
-            <td class="content">{{model.VehicleMake}}</td>
-          </tr>
-          <tr>
-            <td class="label">VIN</td>
-            <td class="content" colspan="3">{{model.VehicleVin}}</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="right" colspan="4">
+                        <img class="logo" src="./img/State_Farm_logo_small.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center padding-bottom" colspan="4">
+                        {{model.State}} Insurance Card
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Name</td>
+                    <td class="content">{{model.PrimaryNamedInsured}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="content">{{model.SecondaryNamedInsured}}</td>
+                </tr>
+                <tr>
+                    <td class="padding-bottom"></td>
+                </tr>
+                <tr>
+                    <td class="label">Policy Number</td>
+                    <td class="content" colspan="3">{{model.PolicyNumber}}</td>
+                </tr>
+                <tr>
+                    <td class="padding-bottom"></td>
+                </tr>
+                <tr>
+                    <td class="label">Effective Date</td>
+                    <td class="content">{{model.PolicyStartDate}}</td>
+                    <td class="label">To</td>
+                    <td class="content">{{model.PolicyEndDate}}</td>
+                </tr>
+                <tr>
+                    <td class="padding-bottom"></td>
+                </tr>
+                <tr>
+                    <td class="label">Year</td>
+                    <td class="content">{{model.VehicleYear}}</td>
+                    <td class="label">Make</td>
+                    <td class="content">{{model.VehicleMake}}</td>
+                </tr>
+                <tr>
+                    <td class="label">VIN</td>
+                    <td class="content" colspan="3">{{model.VehicleVin}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </body>
+
+    <div style="margin:20px">
+        <!-- A table of contents using the same theme for static headers -->
+        <table class="list">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Amount</td>
+                    <td>Due Date</td>
+                    <td>Payment Date</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- and a template for the table rows looping over each of the items -->
+                <template data-bind="{@:Model.PaymentHistory}">
+                    <tr>
+                        <!-- each one is bound with a . prefix for the current item -->
+                        <td>
+                            <span>{@:.Id}</span>
+                        </td>
+                        <td>
+                            <span>{@:.Amount}</span>
+                        </td>
+                        <td>
+                            <span>{@:.DueDate}</span>
+                        </td>
+                        <td>
+                            <span>{@:.PaymentDate}</span>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Page Footer:  <page data-format='Page {0} of {1}' />
+    </footer>
+</body>
 </html>
